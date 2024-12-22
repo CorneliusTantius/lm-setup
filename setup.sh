@@ -1,5 +1,5 @@
 #! /bin/bash
-sudo apt update && sudo apt upgrae -y
+sudo apt update && sudo apt upgrade -y
 
 sudo apt purge libreoffice* -y
 sudo apt purge firefox -y
@@ -12,22 +12,15 @@ sudo apt purge hypnotix -y
 sudo apt purge mintwelcome -y
 sudo apt purge mintchat -y
 
-sudo apt install git -y
-sudo apt install gh -y
+sudo apt install git gh nodejs npm zsh wget -y
+sudo chsh -s /bin/zsh
 
-dir=/etc/apt/sources.list.d/
-filename=$dir/google-chrome.list
-if [ ! $dir ]
-then
-	mkdir $dir
-fi
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 
-if [ ! -f $filename ]
-then
-	touch $filename
-	sudo echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > $filename
-fi
-
+sudo apt update && sudo apt upgrade -y
 sudo apt install google-chrome-stable -y
+
+/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"
 
 # TODO: kintosh setup
