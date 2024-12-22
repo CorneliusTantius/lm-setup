@@ -1,4 +1,6 @@
 #! /bin/bash
+sudo apt update && sudo apt upgrae -y
+
 sudo apt purge libreoffice* -y
 sudo apt purge firefox -y
 sudo apt purge thunderbird -y
@@ -25,4 +27,4 @@ then
 	sudo echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > $filename
 fi
 
-sudo apt install google-chrome-stable
+sudo apt install google-chrome-stable -y
