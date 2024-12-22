@@ -28,3 +28,5 @@ then
 fi
 
 sudo apt install google-chrome-stable -y
+
+# TODO: kintosh setup
