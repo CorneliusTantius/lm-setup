@@ -12,7 +12,8 @@ sudo apt purge hypnotix -y
 sudo apt purge mintwelcome -y
 sudo apt purge mintchat -y
 
-sudo apt install git
+sudo apt install git -y
+sudo apt install gh -y
 
 dir=/etc/apt/sources.list.d/
 filename=$dir/google-chrome.list
