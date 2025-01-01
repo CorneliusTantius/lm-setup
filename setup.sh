@@ -22,5 +22,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install google-chrome-stable -y
 
 /bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"
+gsettings set org.x.apps.xfce4-status-plugin color-icon-size 16
+gsettings set org.x.apps.xfce4-status-plugin symbolic-icon-size 16
 
 # TODO: kintosh setup
